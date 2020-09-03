@@ -75,6 +75,7 @@ signed main(void)
         re0;
     }
     mes("Perfect");
+    re0;
     
     
    
