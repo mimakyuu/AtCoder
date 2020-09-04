@@ -112,6 +112,8 @@ signed main() {
         cin >> l >> r; l--; r--;
         mes(cs[r]-cs[l]);
     }
+
+    re0;
     
     
     
