@@ -116,8 +116,8 @@ signed main() {
     map <ll, ll> mp;
     
     const auto &res = prime_factorize(n);
-    for(auto p: res) {
-        mp[p.first] += p.second;
+    for(auto i: res) {
+        mp[i.first] += i.second;
     }
     
     ll tmp = 1;
