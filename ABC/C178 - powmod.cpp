@@ -84,7 +84,7 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-19;
 
-ll powmod(ll x, ll y){
+ll powmod(ll x, ll y) {
     ll res = 1;
     for(ll i = 0; i < y; i++){
         res = res * x % MOD;
