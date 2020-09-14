@@ -86,9 +86,6 @@ const double EPS = 1e-19;
 
 
 
-
-
-
 signed main() {
     int n;
     cin >> n;
@@ -115,8 +112,9 @@ signed main() {
 
     if (success) {
         mes("Yes");
-        for (int i = 1; i <= n; i ++ ) cout << b[i] << " "; 
+        rrep(i, n) cout << b[i] << " "; 
     } else mes("No");
+
 
 }
     
