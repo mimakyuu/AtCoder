@@ -93,7 +93,7 @@ signed main() {
     r = pow(n/k,3);
     
     if (k % 2 == 0) {
-        r += pow(n/(k/2) - n/k, 3)
+        r += pow(n/(k/2) - n/k, 3);
     }
     
     mes(r);
