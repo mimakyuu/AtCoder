@@ -84,7 +84,7 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-19;
 
-ll powmod(ll x, ll y) {
+ll modpow(ll x, ll y) {
     ll res = 1;
     for(ll i = 0; i < y; i++){
         res = res * x % MOD;
@@ -97,7 +97,7 @@ signed main() {
     cin >> n;
     
     ll r = 0;
-    r = powmod(10, n)-powmod(9, n)-powmod(9, n)+powmod(8, n);
+    r = modpow(10, n)-modpow(9, n)-modpow(9, n)+modpow(8, n);
     r %= MOD;
     r = (r+MOD) % MOD;
 
