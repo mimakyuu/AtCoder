@@ -86,7 +86,7 @@ const double EPS = 1e-19;
 
 
 struct UnionFind { //UnionFind
-    vector<int> par; // par[i]:iの親の番号　(例) par[3] = 2 : 3の親が2
+    vector<int> par; // par[i]:iの親の番号 (例) par[3] = 2 : 3の親が2
 
     UnionFind(int N) : par(N) { //最初は全てが根であるとして初期化
         for(int i = 0; i < N; i++) par[i] = i;
