@@ -88,14 +88,9 @@ signed main() {
     ll n, k;
     cin >> n >> k;
     
-    ll r = 1;
-    
     n -= k;
-    
-    while (n > 0) {
-        n -= k-1;
-        r++;
-    }
+    ll r = 1; 
+    r += ceil((double)n / (k-1));
     
     mes(r);
     
