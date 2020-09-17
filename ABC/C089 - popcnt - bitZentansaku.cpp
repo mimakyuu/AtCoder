@@ -108,21 +108,11 @@ signed main() {
     string s;
     rep(i, n) {
         cin >> s;
-        if (s[0] == 'M') {
-            cnt[0]++;
-        }
-        if (s[0] == 'A') {
-            cnt[1]++;
-        }
-        if (s[0] == 'R') {
-            cnt[2]++;
-        }
-        if (s[0] == 'C') {
-            cnt[3]++;
-        }
-        if (s[0] == 'H') {
-            cnt[4]++;
-        }
+        if (s[0] == 'M') cnt[0]++;
+        if (s[0] == 'A') cnt[1]++;
+        if (s[0] == 'R') cnt[2]++;
+        if (s[0] == 'C') cnt[3]++;
+        if (s[0] == 'H') cnt[4]++;
     }
     
     rep(bit, 1<<5) {
