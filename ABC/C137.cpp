@@ -61,20 +61,22 @@ const double EPS = 1e-9;
 signed main(void) 
 {
     ll n;
-    cin >>n;
-    vs s(n);
-    vll ss(n, 0);
+    cin >> n;
     
-    map <string, ull> mp;
+    string s;
+    map <string, ll> mp;
     
-    ull r = 0;
+    ll r = 0;
     rep(i, n) {
-        cin >>s[i];
-        Sort(s[i]);
-        mp[s[i]] ++;
+        cin >> s;
+        Sort(s);
+        mp[s] ++;
     }
+    
     for(auto i: mp) {
         r += i.second * (i.second-1)/2;
     }
+    
     mes(r);
+    
 }
