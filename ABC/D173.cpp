@@ -93,6 +93,8 @@ signed main() {
     ll n;
     cin >> n;
     
+    ll r = 0;
+    
     vll a(n);
     
     rep(i, n) {
@@ -100,21 +102,9 @@ signed main() {
     }
     
     rSort(a);
+    r += a[0];
     
-    ll r = a[0];
-    int turn = n-2;
-  
-    ll i = 1;
-    while (turn > 0) {
-        if(turn >= 2) {
-            r += 2*a[i];
-            turn -= 2;
-        } else {
-            r += a[i];
-            turn--;
-        }
-        i++;
-    }
+    rep(i, n-2) r += a[i/2 + 1];
     
     mes(r);
     
