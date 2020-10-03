@@ -114,7 +114,7 @@ signed main() {
     
     rSort(a);
     
-    ll tmp = 0;
+    ll tmp = a[n-1];
     ll mid = a[0]/2;
     if (a[0] % 2 == 1) mid ++;
     
