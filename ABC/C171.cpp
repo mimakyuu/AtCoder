@@ -59,6 +59,7 @@ typedef vector<vector<ll> > vvll;
 #define rall(a) a.rbegin(), a.rend()
 #define Sort(a) sort(a.begin(), a.end())
 #define rSort(a) sort(a.rbegin(), a.rend())
+#define Rev(a) reverse(a.begin(), a.end())
 #define MATHPI acos(-1)
 #define itn int;
 int dx[8] = { 1, 0, -1, 0, 1, -1, -1, 1 };
@@ -112,12 +113,13 @@ signed main() {
         n++;
         
         ans.pb('a'+c);
+
         n -= c;
         n /= 26;
-        if(n==0)break;
+        if(n == 0) break;
     }
  
-    reverse(all(ans));
+    Rev(ans);
  
     for(auto x: ans){
         cout << x;
