@@ -121,7 +121,7 @@ signed main() {
  
     Rev(ans);
  
-    for(auto x: ans){
+    for(auto x: ans) {
         cout << x;
     }
     
