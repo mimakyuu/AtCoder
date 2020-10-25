@@ -106,7 +106,7 @@ signed main() {
     vll a(n);
     ll sum = 0;
     
-    ll r = n-1;
+    ll r = 0;
     
     rep(i, n) {
         cin >> a[i];
@@ -122,18 +122,16 @@ signed main() {
     
     ll tmp = 0;
     ll cnt = 0;
-    rep(i, n-1) {
+    rep(i, n) {
         tmp += a[i];
         cnt++;
         if (tmp == m*cnt) {
-            r -= 1;
+            r += cnt-1;
             tmp = 0;
             cnt = 0;
             
         }
     }
-    
-    
     
     mes(r);
     
