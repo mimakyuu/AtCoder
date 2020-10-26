@@ -106,7 +106,7 @@ signed main(void) {
     cin >> n >> m;
     ll r = 0;
     
-    priority_queue<int> que;
+    priority_queue<ll> que;
     vvll rew(100005);
     
     
