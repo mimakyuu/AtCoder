@@ -107,43 +107,18 @@ signed main() {
     ll x = tx - sx;
     ll y = ty - sy;
     
-    queue <char> que;
-    rep(i, 1) {
-        que.push('L');
-    }
+    cout << 'L';
+    cout << string(y+1, 'U');
+    cout << string(x+1, 'R');
+    cout << string(y+1, 'D');
+    cout << string(x, 'L');
     
-    rep(i, y+1) {
-        que.push('U');
-    }
-    rep(i, x+1) {
-        que.push('R');
-    }
-    rep(i, y+1) {
-        que.push('D');
-    }
-    rep(i, x) {
-        que.push('L');
-    }
-    rep(i, y) {
-        que.push('U');
-    }
-    rep(i, x+1) {
-        que.push('R');
-    }
-    rep(i, y+1) {
-        que.push('D');
-    }
-    rep(i, x+1) {
-        que.push('L');
-    }
-    rep(i, 1) {
-        que.push('U');
-    }
-    
-    while (!que.empty()) {
-        cout << que.front();
-        que.pop();
-    }
+    cout << string(y, 'U');
+    cout << string(x+1, 'R');
+    cout << string(y+1, 'D');
+    cout << string(x+1, 'L');
+    cout << 'U';
+        
     
     cout << endl;
     
