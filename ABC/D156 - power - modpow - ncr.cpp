@@ -125,7 +125,7 @@ ll modpow(ll x, ll y) {
     return ans;
 }
 
-ll ncr(ll N, ll K) {
+ll modncr(ll N, ll K) {
     ll res = 1;
     ll p=1;
     for (ll n = 0; n < K; ++n) {
@@ -142,8 +142,8 @@ signed main() {
     ll r = modpow(2,n) - 1;
     
     
-    r -= ncr(n, a);
-    r -= ncr(n, b);
+    r -= modncr(n, a);
+    r -= modncr(n, b);
     
     while (r < 0) {
         r += MOD;
