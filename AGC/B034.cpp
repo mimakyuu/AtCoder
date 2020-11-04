@@ -141,7 +141,7 @@ signed main() {
     cin >> s;
     ll len = (ll)s.size();
     
-    vc s2(2000000);
+    vc s2(200005);
     
     ll r = 0;
     
