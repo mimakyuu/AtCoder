@@ -97,8 +97,6 @@ signed main() {
         int v = que.front();
         que.pop();
         for (auto nv : g[v]) {
-            //if (dist[nv] != -1) continue;
-            //dist[nv] = dist[v]+1;
             
             if (dst[nv] != -1) continue;
             dst[nv] = v;
