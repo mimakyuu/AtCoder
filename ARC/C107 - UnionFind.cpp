@@ -93,35 +93,18 @@ ll nlcm(vector<ll> numbers) {
 
 
 
-ll power(ll x, ll y) {
-    if(y == 1) {
-        return x;
-    }
-    ll ans;
-    if(y % 2 == 1) {
-        ll r = power(x,(y-1)/2);
-        ans = r * r % MOD;
-        ans = ans * x % MOD;
-    }
-    else {
-        ll r = power(x,y/2);
-        ans = r * r % MOD;
-    }
-    return ans;
-}
-
 ll modpow(ll x, ll y) {
     if(y == 1) {
         return x;
     }
     ll ans;
     if(y % 2 == 1) {
-        ll r = power(x,(y-1)/2);
+        ll r = modpow(x,(y-1)/2);
         ans = r * r % MOD;
         ans = ans * x % MOD;
     }
     else {
-        ll r = power(x,y/2);
+        ll r = modpow(x,y/2);
         ans = r * r % MOD;
     }
     return ans;
@@ -134,7 +117,7 @@ ll modncr(ll N, ll K) {
       res = (res*(N - n))%MOD;
       p = (p*(n + 1))%MOD;
     }
-    return (res*power(p,MOD-2))%MOD;
+    return (res*modpow(p,MOD-2))%MOD;
 }
 
 
