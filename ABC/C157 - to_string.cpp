@@ -74,19 +74,20 @@ const double EPS = 1e-9;
 
 
 int main() {
-    int n,m;
+    ll n, m;
     cin >> n >> m;
     vi s(m);
     vi c(m);
-    rep(i,m) cin >> s[i] >> c[i];
-    rep(i,1000){
+    rep(i, m) cin >> s[i] >> c[i];
+    rep(i, 1000) {
         string str = to_string(i);
         bool flg = true;
         if (str.size() != n) flg = false;
-        for (int j=0; j<m; j++){
+        
+        rep(j, m) {
             if (str[s[j]-1] != (char)(c[j]+'0')) flg = false;
         }
-        if (flg){
+        if (flg) {
             cout << i;
             return 0;
         }
