@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int main(void){
+signed main(void){
     int a, b;
     
     string r = "No";

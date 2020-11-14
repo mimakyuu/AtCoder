@@ -89,7 +89,7 @@ const double EPS = 1e-19;
 
 
 
-int main() {
+signed main() {
     ll n, y;
     cin >> n >> y;
     y /= 1000;

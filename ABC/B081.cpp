@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int main(void){
+signed main(void){
     int n;
     cin >> n;
     int l, i=0, a[n];

@@ -73,7 +73,7 @@ const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
 
-int main() {
+signed main() {
     ll n, m;
     cin >> n >> m;
     vi s(m);

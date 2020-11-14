@@ -72,7 +72,7 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 //#include <math.h>
-int main(void) 
+signed main(void) 
 {
     int a, b;
     cin >>a >>b;

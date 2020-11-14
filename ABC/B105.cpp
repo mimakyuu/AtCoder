@@ -97,7 +97,7 @@ vector<int> enum_div(int n){
     return ret;
 }
 
-int main(void){
+signed main(void){
     int n;
     cin >> n;
     int r = 0;

@@ -89,8 +89,6 @@ ll nlcm(vector<ll> numbers) {
     return res;
 }
 
-
-
 ll modpow(ll x, ll y) {
     if(y == 1) {
         return x;

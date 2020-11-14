@@ -1937,7 +1937,7 @@ const double EPS = 1e-9;
 
 using mint = modint998244353;
 
-int main() {
+signed main() {
     ll n, m;
     cin >> n >> m;
     vector<mint> a(n), b(m);

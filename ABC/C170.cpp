@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int main(void){
+signed main(void){
     int r;
     int x, n;
     int f = 0;

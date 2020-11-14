@@ -90,7 +90,7 @@ const double EPS = 1e-19;
 
 
 
-int main() {
+signed main() {
     ll n;
     cin >> n;
     map <ll, ll> mp;

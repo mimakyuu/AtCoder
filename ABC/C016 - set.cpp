@@ -101,7 +101,7 @@ uintmax_t ncr(unsigned int n, unsigned int r) {
 }
 
  
- int main() {
+ signed main() {
      ll n, m;
      cin >> n >> m;
      
