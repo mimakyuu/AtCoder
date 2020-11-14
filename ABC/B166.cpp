@@ -42,7 +42,7 @@ typedef vector<vector<ll>> vvll;
 #define all(a) a.begin(), a.end()
 #define rall(a) a.rbegin(), a.rend()
 #define Sort(a) sort(a.begin(), a.end())
-#define Rort(a) sort(a.rbegin(), a.rend())
+#define rSort(a) sort(a.rbegin(), a.rend())
 #define MATHPI acos(-1)
 #define itn int;
 int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
