@@ -72,13 +72,7 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 998244353;
 const double EPS = 1e-9;
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a%b) : a;
-}
 
-ll lcm(ll a, ll b) {
-    return a / gcd(a, b) * b;
-}
 
 ll nlcm(vector<ll> numbers) {
     ll res;

@@ -104,34 +104,6 @@ ll modncr(ll N, ll K) {
     return (res*modpow(p,MOD-2))%MOD;
 }
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a%b) : a;
-}
-
-ll lcm(ll a, ll b) {
-    return a / gcd(a, b) * b;
-}
-
-ll nlcm(vector<ll> numbers) {
-    ll res;
-    res = numbers[0];
-    for (ll i = 1; i < (ll)numbers.size(); i++) {
-        res = lcm(res, numbers[i]);
-    }
-    return res;
-}
-
-uintmax_t ncr(unsigned int n, unsigned int r) {
-    if ( r * 2 > n ) r = n - r;
-    uintmax_t dividend = 1;
-    uintmax_t divisor  = 1;
-    for ( unsigned int i = 1; i <= r; ++i ) {
-        dividend *= (n-i+1);
-        divisor  *= i;
-    }
-    return dividend / divisor;
-}
-
 vector<pair<ll, ll>> prime_factorize(ll n) {
   vector<pair<ll, ll>> res;
   for (ll i = 2; i * i <= n; i++) {

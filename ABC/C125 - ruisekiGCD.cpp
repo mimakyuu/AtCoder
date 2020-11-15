@@ -104,13 +104,7 @@ ll modncr(ll N, ll K) {
     return (res*modpow(p,MOD-2))%MOD;
 }
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a%b) : a;
-}
 
-ll lcm(ll a, ll b) {
-    return a / gcd(a, b) * b;
-}
 
 ll nlcm(vll numbers) {
     ll res = numbers[0];
@@ -126,17 +120,6 @@ ll ngcd(vll a){
         res = gcd(a[i], res);
     }
     return res;
-}
-
-uintmax_t ncr(unsigned int n, unsigned int r) {
-    if ( r * 2 > n ) r = n - r;
-    uintmax_t dividend = 1;
-    uintmax_t divisor  = 1;
-    for ( unsigned int i = 1; i <= r; ++i ) {
-        dividend *= (n-i+1);
-        divisor  *= i;
-    }
-    return dividend / divisor;
 }
 
 
