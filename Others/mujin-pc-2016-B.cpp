@@ -114,7 +114,7 @@ signed main() {
     a = l[0] + l[1] + l[2];
     b = max(0ll, l[0] - l[1] - l[2]);
 	
-    printf("%.10lf", (a*a- b*b) * MATHPI);
+    printf("%.10lf", (a*a - b*b) * MATHPI);
     
     
 	
