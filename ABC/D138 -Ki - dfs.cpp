@@ -108,7 +108,7 @@ using Graph = vvll;
 ll n, q;
 Graph g;
 
-void dfs(int v, int p, vector<long long> &res) {
+void dfs(ll v, ll p, vll &res) {
     if (p != -1) res[v] += res[p];
     for (auto e : g[v]) {
         if (e == p) continue;
