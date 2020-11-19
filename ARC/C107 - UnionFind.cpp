@@ -1,21 +1,23 @@
-#include <iostream>
+#include <algorithm>
+#include <bitset>
+#include <cassert>
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
-#include <algorithm>
-#include <cmath>
-#include <vector>
+#include <iomanip>
+#include <ios>
+#include <iostream>
 #include <list>
-#include <set>
 #include <map>
 #include <queue>
+#include <set>
 #include <stack>
-#include <cctype>
-#include <cassert>
-#include <climits>
 #include <string>
-#include <bitset>
-#include <cfloat>
 #include <unordered_set>
+#include <vector>
 #pragma GCC optimize("Ofast")
 
 using namespace std;
@@ -72,15 +74,39 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
+ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
+
+ll modpow(ll x, ll y) {
+    if(y == 1) {
+        return x;
+    }
+    ll ans;
+    if(y % 2 == 1) {
+        ll r = modpow(x,(y-1)/2);
+        ans = r * r % MOD;
+        ans = ans * x % MOD;
+    }
+    else {
+        ll r = modpow(x,y/2);
+        ans = r * r % MOD;
+    }
+    return ans;
+}
+
+ll modncr(ll N, ll K) {
+    ll res = 1;
+    ll p=1;
+    for (ll n = 0; n < K; ++n) {
+      res = (res*(N - n))%MOD;
+      p = (p*(n + 1))%MOD;
+    }
+    return (res*modpow(p,MOD-2))%MOD;
+}
+
 const ll mod = 998244353;
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a%b) : a;
-}
 
-ll lcm(ll a, ll b) {
-    return a / gcd(a, b) * b;
-}
 
 ll nlcm(vector<ll> numbers) {
     ll res;

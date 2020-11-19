@@ -1,21 +1,23 @@
-#include <iostream>
+#include <algorithm>
+#include <bitset>
+#include <cassert>
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
-#include <algorithm>
-#include <cmath>
-#include <vector>
+#include <iomanip>
+#include <ios>
+#include <iostream>
 #include <list>
-#include <set>
 #include <map>
 #include <queue>
+#include <set>
 #include <stack>
-#include <cctype>
-#include <cassert>
-#include <climits>
 #include <string>
-#include <bitset>
-#include <cfloat>
 #include <unordered_set>
+#include <vector>
 #pragma GCC optimize("Ofast")
 
 using namespace std;
@@ -72,22 +74,8 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a%b) : a;
-}
-
-ll lcm(ll a, ll b) {
-    return a / gcd(a, b) * b;
-}
-
-ll nlcm(vector<ll> numbers) {
-    ll res;
-    res = numbers[0];
-    for (ll i = 1; i < (ll)numbers.size(); i++) {
-        res = lcm(res, numbers[i]);
-    }
-    return res;
-}
+ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
 
 ll modpow(ll x, ll y) {
     if(y == 1) {
