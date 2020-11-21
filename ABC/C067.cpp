@@ -1,23 +1,4 @@
-#include <algorithm>
-#include <bitset>
-#include <cassert>
-#include <cctype>
-#include <cfloat>
-#include <climits>
-#include <cmath>
-#include <cstdint>
-#include <cstdio>
-#include <iomanip>
-#include <ios>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_set>
-#include <vector>
+#include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
 
 using namespace std;
