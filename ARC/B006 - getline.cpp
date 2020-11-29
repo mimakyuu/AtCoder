@@ -100,8 +100,10 @@ signed main()
         getline(cin, s);
         field[i] = s;
     }
+
     Rev(field);
     ll pos = field[0].find("o");
+    
     for (ll i = 1; i < l+1; i++) {
         string tmp = field[i];
         ll f_pos = 0;
