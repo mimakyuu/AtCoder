@@ -16,6 +16,7 @@ typedef vector<vector<int> > vvi;
 typedef vector<vector<char> > vvc;
 typedef vector<vector<string> > vvs;
 typedef vector<vector<ll> > vvll;
+typedef vector<vector<bool> > vvb;
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define rrep(i, n) for (int i = 1; i <= (n); ++i)
