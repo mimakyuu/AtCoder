@@ -100,18 +100,18 @@ signed main() {
     ll n;
     cin >> n;
     
-    vll r;
-    
+    ll cnt = 0;
     rrep(i, 55555) {
+        if (cnt == n) break;
         if (i % 5 != 1) continue;
-        if (isPrime(i)) r.pb(i);
+        if (isPrime(i)) {
+            cout << i << " ";
+            cnt++;
+        }
+        
     }
     
-	
-    rep(i, n) {
-        cout << r[i] << " ";
-    }
-	
+	cout << endl;
 	
 	
 }
