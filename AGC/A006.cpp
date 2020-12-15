@@ -1,23 +1,4 @@
-#include <algorithm>
-#include <bitset>
-#include <cassert>
-#include <cctype>
-#include <cfloat>
-#include <climits>
-#include <cmath>
-#include <cstdint>
-#include <cstdio>
-#include <iomanip>
-#include <ios>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_set>
-#include <vector>
+#include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
 
 using namespace std;
@@ -35,6 +16,7 @@ typedef vector<vector<int> > vvi;
 typedef vector<vector<char> > vvc;
 typedef vector<vector<string> > vvs;
 typedef vector<vector<ll> > vvll;
+typedef vector<vector<bool> > vvb;
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define rrep(i, n) for (int i = 1; i <= (n); ++i)
@@ -106,48 +88,30 @@ ll modncr(ll N, ll K) {
 
 
 signed main() {
-    ll h, w;
-    cin >> h >> w;
-    ll sy, sx, gy, gx;
-    cin >> sy >> sx >> gy >> gx;
-    sy--; sx--; gy--; gx--;
-
+    ll n;
+    cin >> n;
+    string s, t;
+    cin >> s >> t;
+    ll r = 2*n;
     
-    vs field(h);
-    rep(i, h) {
-        cin >> field[i];
+    if (s == t) {
+        mes(n);
+        re0;
     }
-
-
-
-    vvll dist(h, vll(w, -1)); 
-    dist[sy][sx] = 0;
-
-    queue <pair<ll, ll>> que; 
-    que.push (make_pair(sy, sx));
-
-
-    while (!que.empty()) {
-        pair<ll, ll> current_pos = que.front();
-        ll x = current_pos.second;
-        ll y = current_pos.first;
-        que.pop();
-
-        for (int dir = 0; dir < 4; ++dir) {
-            int next_x = x + dx[dir];
-            int next_y = y + dy[dir];
-            if (next_y < 0 || next_y >= h || next_x < 0 || next_x >= w) continue;
-            if (field[next_y][next_x] == '#') continue;
-
-            if (dist[next_y][next_x] == -1) {
-                que.push(make_pair(next_y, next_x));
-                dist[next_y][next_x] = dist[y][x] + 1;
-            }
+    rep(i, n) {
+        bool flg = true;
+        rep(j, n) {
+            if (i+j >= n) continue;
+            if (s[i+j] != t[j]) flg = false;
         }
+        if (flg) r = i+n;
     }
-
-
-    mes(dist[gy][gx]);
-
+    
+    mes(r);
+    
+    
+    
+    
     
 }
+

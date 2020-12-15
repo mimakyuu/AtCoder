@@ -1,23 +1,4 @@
-#include <algorithm>
-#include <bitset>
-#include <cassert>
-#include <cctype>
-#include <cfloat>
-#include <climits>
-#include <cmath>
-#include <cstdint>
-#include <cstdio>
-#include <iomanip>
-#include <ios>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_set>
-#include <vector>
+#include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
 
 using namespace std;
@@ -35,6 +16,7 @@ typedef vector<vector<int> > vvi;
 typedef vector<vector<char> > vvc;
 typedef vector<vector<string> > vvs;
 typedef vector<vector<ll> > vvll;
+typedef vector<vector<bool> > vvb;
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define rrep(i, n) for (int i = 1; i <= (n); ++i)
@@ -107,7 +89,7 @@ ll modncr(ll N, ll K) {
 
 ll n, m;
 vll a(50), b(50);
-vector <vb> g(50, vb(50, false));
+vvb g(50, vb(50, false));
 vb isVisit (50);
 
 void dfs(ll v) {
