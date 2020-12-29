@@ -1,22 +1,20 @@
 import java.io.PrintWriter
+import java.util.Arrays;
+import java.util.Collections;
 val pw = PrintWriter(System.out)
-fun main(args : Array<String>) {
-    solve()
-    pw.flush()
-}
 
-fun solve() {
-    
-}
-
-fun next() = readLine()!!
-fun nextInt() = next().toInt()
-fun nextLong() = next().toLong()
-fun nextDouble() = next().toDouble()
-fun listOfString() = next().split(" ")
-fun listOfInt() = listOfString().map { it.toInt() }
-fun listOfLong() = listOfString().map { it.toLong() }
-fun listOfDouble() = listOfString().map { it.toDouble() }
+fun get() = readLine()!!
+fun getint() = get().toInt()
+fun getlong() = get().toLong()
+fun getdouble() = get().toDouble()
+fun vs() = get().split(" ")
+fun vi() = get().split(" ").map(String::toInt).toTypedArray()
+fun vll() = get().split(" ").map(String::toLong).toTypedArray()
+fun vllSort() = get().split(" ").map(String::toLong).toTypedArray().sortedArray()
+fun vllrSort() = get().split(" ").map(String::toLong).toTypedArray().sortedArrayDescending()
+fun vd() = get().split(" ").map(String::toDouble).toTypedArray()
+fun vdSort() = get().split(" ").map(String::toDouble).toTypedArray().sortedArray()
+fun vdrSort() = get().split(" ").map(String::toDouble).toTypedArray().sortedArrayDescending()
 
 fun divisor(value : Long) : List<Long> {
     val max = Math.sqrt(value.toDouble()).toLong()
@@ -56,4 +54,15 @@ fun swap(base : String, a : String, b : String) : String {
 
 fun println(value : Any) {
     pw.println(value)
+}
+
+fun main(args : Array<String>) {
+    solve()
+    pw.flush()
+}
+
+fun solve() {
+    
+
+    
 }
