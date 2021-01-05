@@ -138,7 +138,7 @@ signed main() {
 
     
     rep(i, n) {
-        if (tree.same(i, p[i]-1)) { //iとP[i]-1が同じ木に属するなら，カウンタに1追加
+        if (tree.issame(i, p[i]-1)) { //iとP[i]-1が同じ木に属するなら，カウンタに1追加
             r++;
         }
     }
