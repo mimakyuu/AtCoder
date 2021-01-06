@@ -18,12 +18,19 @@ typedef vector<vector<string> > vvs;
 typedef vector<vector<ll> > vvll;
 typedef vector<vector<bool> > vvb;
 
-#define rep(i, n) for (int i = 0; i < (n); ++i)
-#define rrep(i, n) for (int i = 1; i <= (n); ++i)
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define rrep(i, n) for (int i = 1; i <= int(n); ++i)
 #define irep(it, stl) for (auto it = stl.begin(); it != stl.end(); it++)
-#define drep(i, n) for (int i = (n)-1; i >= 0; --i)
-#define mes(a) cout << (a) << endl
-#define dmes(a, b) cout << (a) << " " << (b) << endl
+#define drep(i, n) for (int i = int(n)-1; i >= 0; --i)
+
+#define MES(a) MES2 a
+#define MES2(a0,a1,a2,a3,a4,x,...) x
+#define mes_1(x1) cout<<x1<<endl
+#define mes_2(x1,x2) cout<<x1<<" "<<x2<<endl
+#define mes_3(x1,x2,x3) cout<<x1<<" "<<x2<<" "<<x3<<endl
+#define mes_4(x1,x2,x3,x4) cout<<x1<<" "<<x2<<" "<<x3<<" "<<x4<<endl
+#define mes_5(x1,x2,x3,x4,x5) cout<<x1<<" "<<x2<<" "<<x3<<" "<<x4<<" "<<x5<<endl
+#define mes(...) CHOOSE((__VA_ARGS__,mes_5,mes_4,mes_3,mes_2,mes_1,~))(__VA_ARGS__)
 
 #define CHOOSE(a) CHOOSE2 a
 #define CHOOSE2(a0,a1,a2,a3,a4,x,...) x
@@ -95,7 +102,7 @@ signed main() {
     rep(ii, n) {
         string s;
         cin >> s;
-        ll len = (ll)s.size();
+        ll len = s.size();
         int cnt2 = 0;
         rep(i, len) {
             if (s[i] == 44 || s[i] == 46) continue;
