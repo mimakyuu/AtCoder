@@ -62,9 +62,6 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
-ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
-
 ll modpow(ll x, ll y) {
     if(y == 1) {
         return x;
