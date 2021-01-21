@@ -60,7 +60,7 @@ template <class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; 
 struct io { io() { ios::sync_with_stdio(false); cin.tie(0); } };
 const int INF = INT_MAX;
 const ll LLINF = 1LL << 60;
-const ll MOD = 1777777777;
+const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
 ll fact_mod(ll n, ll mod) {
