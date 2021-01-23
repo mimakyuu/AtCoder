@@ -111,7 +111,7 @@ signed main() {
 	
   	ll r = -LLINF;
   	rep(i, n) {
-    	r = max(r, a[i]-dp[i]);
+    	chmax(r, a[i]-dp[i]);
   	}
 	
   	mes(r);
