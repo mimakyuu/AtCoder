@@ -97,20 +97,20 @@ signed main() {
 	ll r = 0;
 	
 	for (int bit = 0; bit < (1<<n); ++bit) {
-		vll f;
+		vll mem;
 		rep(i, n) {
 			if (bit & (1<<i)) {
-				f.pb(i);
+				mem.pb(i);
 			}
 		}
 		ll tmp = 0;
 		rep(i, m) {
 			bool fa = false, fb = false;
-			for (auto j: f) {
+			for (auto j: mem) {
 				if (a[i] == j) fa = true;
 				if (b[i] == j) fb = true;
 			}
-			if (fa && fb) tmp++;
+			if (fa && fb) tmp++; //メンバー同士の関係なら加算する
 		}
 		ll p = __builtin_popcount(bit);
 		if (tmp == p*(p-1)/2) chmax(r, p);
