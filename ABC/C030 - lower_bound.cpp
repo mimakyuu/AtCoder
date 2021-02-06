@@ -97,12 +97,12 @@ signed main() {
 	}
 	ll r = 0;
 	ll time = 0;
-	vll::iterator it;
+	vll::iterator it; //イテレータの初期化
 	int pos;
 	while(true) {
 		it = lower_bound(all(a), time);
-		if (it == a.end()) break;
-		pos = distance(a.begin(), it);
+		if (it == a.end()) break; //time以上の値がなかったら終了
+		pos = distance(a.begin(), it); //time以上の値が初めて出てくる場所を代入
 		time = a[pos] + x;
 		
 		it = lower_bound(all(b), time);
