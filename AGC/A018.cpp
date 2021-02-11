@@ -109,7 +109,7 @@ signed main() {
 	
 	
 	rep(i, n) {
-		if ((a[i]-k) % mi == 0) flg = true;
+		if ((a[i]-k) % tmp == 0) flg = true;
 	}
 	
 	if (ma < k) flg = false;
