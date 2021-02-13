@@ -86,19 +86,45 @@ ll modncr(ll n, ll r, ll mod) {
 
 
 signed main() {
-	ll t;
-	cin >> t;
-	while(t--) {
-		ll l, r;
-		cin >> l >> r;
-		if (r < 2*l) {
-			mes(0);
-			continue;
-		}
-	 	ll ans = max(0ll, (2*l-r-2)*(2*l-r-1)/2);
-		mes(ans);
-		
+	ll b, c;
+	cin >> b >> c;
+	
+	if (c == 1 && b == 0) {
+		mes(1);
+		re0;
 	}
+	if (c == 1) {
+		mes(2);
+		re0;
+	}
+	if (c == 2 && b == 0) {
+		mes(2);
+		re0;
+	}
+	if (c == 2) {
+		mes(3);
+		re0;
+	}
+	
+	ll r = 2;
+	r += (c-1)/2 - c%2;
+	r += (c-1)/2;
+	r += min(c/2+(c-1)/2, 2*b-1);
+	
+	if (b == 0) {
+		r = 1;
+		r += c/2;
+		r += (c-1)/2 + c%2;
+	}
+	
+	if (b < 0) {
+		r = 2;
+		r += c/2;
+		r += min((c-1)/2 + (c-1)/2 - c%2, -2*b-1);
+		r += (c-1)/2 + c%2;
+	}
+
+	mes(r);
 	
 	
 	
