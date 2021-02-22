@@ -107,7 +107,7 @@ struct graph{
 
   	void add_edge(ll s, ll t, ll cost, ll k){
     	edge e;
-    	e.to = t, e.cost = cost;
+    	e.to = t;
 		e.cost = cost;
 		e.k = k;
     	G[s].push_back(e);
