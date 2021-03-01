@@ -1,7 +1,17 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
-
 using namespace std;
+
+#if __has_include(<atcoder/all>)
+#include <atcoder/all>
+using namespace atcoder;
+#endif
+
+#if __has_include("acl-all.h")
+#include "acl-all.h"
+using namespace atcoder;
+#endif
+
 typedef long double ld;
 typedef long long int ll;
 typedef unsigned long long int ull;
@@ -11,11 +21,13 @@ typedef vector<bool> vb;
 typedef vector<double> vd;
 typedef vector<string> vs;
 typedef vector<ll> vll;
-typedef vector<pair<int, int> > vpii;
+typedef vector<pair<ll, ll> > vpll;
 typedef vector<vector<int> > vvi;
 typedef vector<vector<char> > vvc;
 typedef vector<vector<string> > vvs;
 typedef vector<vector<ll> > vvll;
+typedef vector<vector<bool> > vvb;
+typedef pair<ll, ll> pll;
 
 #define rep(i, n) for (int i = 0; i < int(n); ++i)
 #define rrep(i, n) for (int i = 1; i <= int(n); ++i)
@@ -40,7 +52,7 @@ typedef vector<vector<ll> > vvll;
 #define debug_5(x1,x2,x3,x4,x5) cout<<#x1<<": "<<x1<<", "#x2<<": "<<x2<<", "#x3<<": "<<x3<<", "#x4<<": "<<x4<<", "#x5<<": "<<x5<<endl
 #define debug(...) CHOOSE((__VA_ARGS__,debug_5,debug_4,debug_3,debug_2,debug_1,~))(__VA_ARGS__)
 
-#define ynmes(a) (a) ? mes("Yes") : mes("No")
+#define Ynmes(a) (a) ? mes("Yes") : mes("No")
 #define YNmes(a) (a) ? mes("YES") : mes("NO")
 #define re0 return 0
 #define mp(p, q) make_pair(p, q)
@@ -50,8 +62,7 @@ typedef vector<vector<ll> > vvll;
 #define Sort(a) sort(a.begin(), a.end())
 #define rSort(a) sort(a.rbegin(), a.rend())
 #define Rev(a) reverse(a.begin(), a.end())
-#define MATHPI acos(-1)
-#define itn int;
+#define M_PI acos(-1)
 int dx[8] = { 1, 0, -1, 0, 1, -1, -1, 1 };
 int dy[8] = { 0, 1, 0, -1, 1, 1, -1, -1 };
 template <class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
