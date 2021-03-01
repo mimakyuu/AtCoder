@@ -62,7 +62,7 @@ typedef pair<ll, ll> pll;
 #define Sort(a) sort(a.begin(), a.end())
 #define rSort(a) sort(a.rbegin(), a.rend())
 #define Rev(a) reverse(a.begin(), a.end())
-#define M_PI acos(-1)
+
 int dx[8] = { 1, 0, -1, 0, 1, -1, -1, 1 };
 int dy[8] = { 0, 1, 0, -1, 1, 1, -1, -1 };
 template <class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }

@@ -1931,7 +1931,7 @@ typedef vector<vector<bool> > vvb;
 #define rall(a) a.rbegin(), a.rend()
 #define Sort(a) sort(a.begin(), a.end())
 #define rSort(a) sort(a.rbegin(), a.rend())
-#define M_PI acos(-1)
+
 
 int dx[8] = { 1, 0, -1, 0, 1, -1, -1, 1 };
 int dy[8] = { 0, 1, 0, -1, 1, 1, -1, -1 };
