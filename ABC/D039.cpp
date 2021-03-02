@@ -2,15 +2,17 @@
 #pragma GCC optimize("Ofast")
 using namespace std;
 
+//#define ACL
+#ifdef ACL
 #if __has_include(<atcoder/all>)
 #include <atcoder/all>
 using namespace atcoder;
 #endif
-
 #if __has_include("acl-all.h")
-#include "acl-all.h"
+#include "acl-all.h" //on Wandbox
 using namespace atcoder;
 #endif
+#endif //#ifdef ACL
 
 typedef long double ld;
 typedef long long int ll;
