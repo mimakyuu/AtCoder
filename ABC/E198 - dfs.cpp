@@ -102,25 +102,25 @@ vvll graph(100005);
 vll cnt(100005, 0);
 vb flg(100005, false);
 
-void dfs(ll cur, ll parent = -1){
+void dfs(ll cur, ll parent = -1) {
 	if (cnt[c[cur]] == 0) flg[cur] = true;
 	cnt[c[cur]]++;
 	
-	for (auto to : graph[cur]){
+	for (auto to : graph[cur]) {
 		if (to != parent) dfs(to, cur);
 	}
 	cnt[c[cur]]--;
 }
 
 
-signed main(){ 
+signed main() { 
 	ll n;
 	cin >> n;
 	rep(i, n) {
 		cin >> c[i];
 	}
 	
-	rep(i, n-1){
+	rep(i, n-1) {
 		ll a, b;
 		cin >> a >> b;
 		a--, b--;
@@ -130,7 +130,7 @@ signed main(){
 	
 	dfs(0);
 	
-	rep(i, n){
+	rep(i, n) {
 		if (flg[i]) mes(i+1);
 	}
 	
