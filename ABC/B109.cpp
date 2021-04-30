@@ -98,21 +98,19 @@ ll modncr(ll n, ll r, ll mod) {
 
 
 signed main() {
-	ll n;
-	cin >> n;
-	char t, b;
-	bool flg = true;
-	map <string, ll> mp;
-	rep(i, n) {
-		string s;
-		cin >> s;
-		t = s[0];
-		
-		if (i && (t != b || mp[s] > 0)) flg = false;
-		mp[s]++;
-		b = s[s.size()-1];
+	string a, b;
+	cin >> a >> b;
+	string c = a+b;
+	
+	ll cur = 1;
+	ll n = 0;
+	drep(i, c.size()) {
+		n += (c[i]-'0') * cur;
+		cur *= 10;
 	}
 	
-	Ynmes(flg);
+	Ynmes((ll)sqrt(n)*(ll)sqrt(n) == n);
+	
+	
 	
 }
