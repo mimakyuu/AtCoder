@@ -132,7 +132,7 @@ signed main() {
 		return 0;
 	};
 	
-	while (abs(ok-ng) > 1){
+	while (abs(ok-ng) > 1) {
 		ll mid = (ok+ng) / 2;
 		
 		if (check(mid)) {
