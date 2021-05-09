@@ -114,8 +114,6 @@ signed main() {
 		rep(i, n) {
 			if (bit & (1<<i)) {
 				tmp += a[i];
-			} else {
-				
 			}
 		}
 		
