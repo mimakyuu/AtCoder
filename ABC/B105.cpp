@@ -75,68 +75,41 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll modpow(ll x, ll y) {
-    if(y == 1) {
-        return x;
-    }
-    ll ans;
-    if(y % 2 == 1) {
-        ll r = modpow(x,(y-1)/2);
-        ans = r * r % MOD;
-        ans = ans * x % MOD;
-    }
-    else {
-        ll r = modpow(x,y/2);
-        ans = r * r % MOD;
-    }
-    return ans;
+ll fact_mod(ll n, ll mod) {
+    ll f = 1; for (ll i = 2; i <= n; i++) f = f * (i % mod) % mod;
+    return f;
 }
 
-ll modncr(ll N, ll K) {
-    ll res = 1;
-    ll p=1;
-    for (ll n = 0; n < K; ++n) {
-      res = (res*(N - n))%MOD;
-      p = (p*(n + 1))%MOD;
-    }
-    return (res*modpow(p,MOD-2))%MOD;
+ll modpow(ll x, ll n, ll mod) {
+    if(n == 0) return 1;
+    ll res = modpow((x * x) % mod, n / 2 , mod);
+    if(n & 1) res = (res * x) % mod;
+    return res;
 }
 
-template
-<   
-    typename TYPE,
-    std::size_t SIZE
->
-std::size_t array_length(const TYPE (&)[SIZE])
-{   
-    return SIZE;
+ll modncr(ll n, ll r, ll mod) {
+    if(r > n-r) r = n-r;
+    if(r == 0) return 1;
+    ll a = 1;
+    rep(i, r) a = a * ((n-i) % mod) % mod;
+    ll b = modpow(fact_mod(r, mod), mod-2, mod);
+    return (a % mod) * (b % mod) % mod;
 }
 
 
-vector<int> enum_div(int n){
-    vector<int> ret;
-    for(int i = 1 ; i*i <= n ; ++i){
-        if(n%i == 0){
-            ret.push_back(i);
-            if(i != 1 && i*i != n){
-                ret.push_back(n/i);
-            }
-        }
-    }
-    if (n != 1) ret.push_back(n);
-    return ret;
-}
-
-signed main(void){
-    int n;
-    cin >> n;
-    int r = 0;
-    vector<int> p(2);
-
-    for (int i=3; i <= n; i += 2) {
-        p = enum_div(i);
-        if (p.size() == 8) r++;
-    }
-    
-    cout << r;
+signed main() {
+	ll n;
+	cin >> n;
+	
+	bool flg = false;
+	rep(i, 100) {
+		rep(j, 100) {
+			if (4*i+7*j == n) flg = true;
+		}
+	}
+	
+	Ynmes(flg);
+	
+	
+	
 }
