@@ -98,7 +98,7 @@ ll modncr(ll n, ll r, ll mod) {
 
 string s;
 ll getNum(ll b, ll e) {
-	ll cur = 100;
+	ll cur = pow(10, e-b);
 	ll res = 0;
 	for (ll i = b; i <= e; i++) {
 		res += (s[i]-'0')*cur;
