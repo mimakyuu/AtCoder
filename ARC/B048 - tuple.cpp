@@ -130,28 +130,25 @@ signed main() {
 	
 	rep(i, n) {
 		ll win = get<0>(mp[rhbk[i].first]);
-		if (rhbk[i].second == 1) {
-			win += get<3>(mp[rhbk[i].first]);
-		}
-		if (rhbk[i].second == 2) {
-			win += get<4>(mp[rhbk[i].first]);
-		}
-		if (rhbk[i].second == 3) {
-			win += get<2>(mp[rhbk[i].first]);
-		}
-		
 		ll draw = 0;
 		if (rhbk[i].second == 1) {
+			win += get<3>(mp[rhbk[i].first]);
 			draw += get<2>(mp[rhbk[i].first])-1;
 		}
 		if (rhbk[i].second == 2) {
+			win += get<4>(mp[rhbk[i].first]);
 			draw += get<3>(mp[rhbk[i].first])-1;
 		}
 		if (rhbk[i].second == 3) {
+			win += get<2>(mp[rhbk[i].first]);
 			draw += get<4>(mp[rhbk[i].first])-1;
 		}
+		
 		ll lose = n - (win+draw) - 1;
 		mes(win, lose, draw);
+		
 	}
+	
+	
 	
 }
