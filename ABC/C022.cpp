@@ -101,28 +101,28 @@ signed main() {
 	ll n, m;
 	cin >> n >> m;
 	
-    vvll d(n, vll(n, LLINF));
+	vvll d(n, vll(n, LLINF));
 	
-    rep(i, n) {
+	rep(i, n) {
 		d[i][i] = 0;
 	}
 	
-    rep(i, m) {
-        ll u, v, l;
+	rep(i, m) {
+		ll u, v, l;
 		cin >> u >> v >> l;
-        u--, v--;
-        d[u][v] = l;
-        d[v][u] = l;
-    }
+		u--, v--;
+		d[u][v] = l;
+		d[v][u] = l;
+	}
 	
-    rep(k, n) {
-        rep(i, n) {
-            rep(j, n) {
-                if (i == 0 || j == 0 || k == 0) continue;
-                chmin(d[i][j], d[i][k]+d[k][j]);
-            }
-        }
-    }
+	rep(k, n) {
+		rep(i, n) {
+			rep(j, n) {
+				if (i == 0 || j == 0 || k == 0) continue;
+				chmin(d[i][j], d[i][k]+d[k][j]);
+			}
+		}
+	}
 	
 	ll r = LLINF;
 	rrep(i, n-1) {
