@@ -98,54 +98,22 @@ ll modncr(ll n, ll r, ll mod) {
 
 
 signed main() {
-	ll n, q;
-	cin >> n >> q;
-	vll a(n-1), b(n-1);
-    
-    vvll g(n);
-	map <pair<ll, ll>, ll> mp;
-    
-    rrep(i, n-1) {
-		ll u, v;
-		cin >> u >> v;
-		u--; v--;
-        g[u].push_back(v);
-        g[v].push_back(u);
-		mp[mp(u, v)] = 1;
-    }
- 
-    vll dist(n, -1);
-    queue<int> que;
- 
-    dist[0] = 0;
-    que.push(0);
- 
-    while (!que.empty()) {
-        ll v = que.front();
-        que.pop();
+	ll n;
+	cin >> n;
+	vll c(n);
+	rep(i, n) {
+		cin >> c[i];
 		
-        for (auto nv : g[v]) {
-            if (dist[nv] != -1) continue;
-            dist[nv] = dist[v] + mp[mp(min(v, nv), max(v, nv))];
-            que.push(nv);  
-                
-        }
-    }
-    
-    
-    
-    rep(i, q) {
-		ll c, d;
-		cin >> c >> d;
-		c--; d--;
-		if ((dist[c]-dist[d])%2) {
-			mes("Road");
-			
-		} else {
-			mes ("Town");
-		}
 	}
-	
+	Sort(c);
+	ll r = 1;
+	ll tmp = 0;
+	rep(i, n) {
+		r *= max(0ll, c[i]-tmp);
+		tmp++;
+		r %= MOD;
+	}
+	mes(r);
 	
 	
 }
