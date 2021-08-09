@@ -75,88 +75,73 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll modpow(ll x, ll y) {
-    if(y == 1) {
-        return x;
-    }
-    ll ans;
-    if(y % 2 == 1) {
-        ll r = modpow(x,(y-1)/2);
-        ans = r * r % MOD;
-        ans = ans * x % MOD;
-    }
-    else {
-        ll r = modpow(x,y/2);
-        ans = r * r % MOD;
-    }
-    return ans;
+ll fact_mod(ll n, ll mod) {
+    ll f = 1; for (ll i = 2; i <= n; i++) f = f * (i % mod) % mod;
+    return f;
 }
 
-ll modncr(ll N, ll K) {
-    ll res = 1;
-    ll p=1;
-    for (ll n = 0; n < K; ++n) {
-      res = (res*(N - n))%MOD;
-      p = (p*(n + 1))%MOD;
-    }
-    return (res*modpow(p,MOD-2))%MOD;
+ll modpow(ll x, ll n, ll mod) {
+    if(n == 0) return 1;
+    ll res = modpow((x * x) % mod, n / 2 , mod);
+    if(n & 1) res = (res * x) % mod;
+    return res;
 }
 
+ll modncr(ll n, ll r, ll mod) {
+    if(r > n-r) r = n-r;
+    if(r == 0) return 1;
+    ll a = 1;
+    rep(i, r) a = a * ((n-i) % mod) % mod;
+    ll b = modpow(fact_mod(r, mod), mod-2, mod);
+    return (a % mod) * (b % mod) % mod;
+}
 
-
-
+string s;
+bool check(string cmp, ll cur) {
+	bool flg = true;
+	rep(i, cmp.size()) {
+		if (cmp[i] != s[cur+i]) flg = false;
+	}
+	return flg;
+}
 
 signed main() {
-    string s;
-    cin >> s;
-    ll len = s.size();
-    
-    ll i = 0;
-    ll bk = 0;
-    int erf = 1;
-    string res = "YES";
-    while (i < len) {
-        bk = i;
-        if (s[i] == 'd') {
-            if(i+4 <= len && s[i+1] == 'r' && s[i+2] == 'e' && s[i+3] == 'a' && s[i+4] == 'm') {
-                i += 5;
-                erf = 0;
-                continue;
-            }
-            
-        }
-        
-        if (s[i] == 'e') {
-            if(i+5 <= len && s[i+1] == 'r' && s[i+2] == 'a' && s[i+3] == 's' && s[i+4] == 'e' && s[i+5] == 'r') {
-                i += 6;
-                erf = 0;
-                continue;
-            }
-            if(i+4 <= len && s[i+1] == 'r' && s[i+2] == 'a' && s[i+3] == 's' && s[i+4] == 'e') {
-                i += 5;
-                erf = 0;
-                continue;
-            }
-        }
-        
-        if (s[i] == 'e' && erf != 1) {
-            if(i+1 <= len && s[i+1] == 'r') {
-                i += 2;
-                erf = 1;
-                continue;
-            }
-        }
-        
-        if (i == bk) {
-            res = "NO";
-            break;
-        }
-            
-    }
-    
-    mes(res);
-    
-    
-    
-    
+	
+	cin >> s;
+	ll cur = 0;
+	ll n = s.size();
+	bool r = true;
+	
+	while (cur < n) {
+		if (check("dreameraser", cur)) {
+			cur += 11;
+			continue;
+		}
+		if (check("dreamerase", cur)) {
+			cur += 10;
+			continue;
+		}
+		if (check("dreamer", cur)) {
+			cur += 7;
+			continue;
+		}
+		if (check("dream", cur)) {
+			cur += 5;
+			continue;
+		}
+		if (check("eraser", cur)) {
+			cur += 6;
+			continue;
+		}
+		if (check("erase", cur)) {
+			cur += 5;
+			continue;
+		}
+		r = false;
+		break;
+	}
+			
+	YNmes(r);
+	
+	
 }
