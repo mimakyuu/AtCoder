@@ -147,7 +147,7 @@ struct graph{
   	}
 	
 };
-//Dijkstra End
+//Dijkstra End (O(E+VlogV))
 
 
 signed main() {
