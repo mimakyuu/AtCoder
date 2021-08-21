@@ -162,9 +162,9 @@ signed main() {
 		}
 	}
 	
-	ll l = 0, r = t, mid;
-	while (r-l > 1) {
-		mid = (r+l) / 2;
+	ll ok = 0, ng = t, mid;
+	while (ng-ok > 1) {
+		mid = (ok+ng) / 2;
 		graph g(h*w); //init
 		rep(i, h) {
 			rep(j, w) {
@@ -186,15 +186,14 @@ signed main() {
 		}
 	
 		g.dijkstra(sy*w+sx);
-		ll res = g.d[gy*w+gx];
-		if (res > t) {
-			r = mid;
+		if (g.d[gy*w+gx] > t) {
+			ng = mid;
 		} else {
-			l = mid;
+			ok = mid;
 		}
 
 	}
-	mes(l);
+	mes(ok);
 	
 	
 	
