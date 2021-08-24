@@ -107,6 +107,7 @@ signed main() {
 		mp[c].pb(x);
 	}
 	vll mi, ma;
+	ma.pb(0), mi.pb(0);
 	for (auto i: mp) {
 		Sort(i.second);
 		ma.pb(i.second[i.second.size()-1]);
@@ -114,25 +115,12 @@ signed main() {
 	}
 	
 	
-	ll m = mi.size();
-	vvll dp(m, vll(2, LLINF));
+	ll m = mi.size()-1;
+	vvll dp(m+1, vll(2, LLINF));
+	dp[0][0] = 0, dp[0][1] = 0;
+	ll x;
 	
-	ll x = 0;
-	if (x <= ma[0]) {
-		chmin(dp[0][0], (ma[0]-x) + (ma[0]-mi[0]));
-	} else {
-		chmin(dp[0][0], (x-ma[0]));
-	}
-		
-	if (x >= mi[0]) {
-		chmin(dp[0][1], (x-mi[0]) + (ma[0]-mi[0]));
-	} else {
-		chmin(dp[0][1], (ma[0]-x));
-	}
-	
-	rep(i, m) {
-		if (i == 0) continue;
-		
+	rrep(i, m) {
 		x = mi[i-1];
 		if (x <= ma[i]) {
 			chmin(dp[i][0], dp[i-1][0] + (ma[i]-x) + (ma[i]-mi[i]));
@@ -157,9 +145,10 @@ signed main() {
 		} else {
 			chmin(dp[i][1], dp[i-1][1] + (ma[i]-x));
 		}
+		
 	}
 	
-	ll r = min(dp[m-1][0]+abs(mi[m-1]), dp[m-1][1]+abs(ma[m-1]));
+	ll r = min(dp[m][0]+abs(mi[m]), dp[m][1]+abs(ma[m]));
 	mes(r);
 	
 	
