@@ -115,7 +115,7 @@ ll intervalScheduling(vector<pll> v) {
 	
 	return res;
 }
-//intervalScheduling (O(N)) End
+//intervalScheduling (O(v.size())) End
 
 signed main() {
     ll n, m; 
