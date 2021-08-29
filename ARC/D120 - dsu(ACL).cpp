@@ -112,10 +112,12 @@ signed main() {
 	drep(i, m) {
 		if (i == 0) continue;
 		if (tree.leader(a[i]) != tree.leader(b[i])) {
+            //連結成分数をcntで管理せずtree.size(tree.leader(a[i]))を使っても間に合う
 			ll sum = cnt[tree.leader(a[i])] + cnt[tree.leader(b[i])];
 			r[i-1] = r[i] - cnt[tree.leader(a[i])] * cnt[tree.leader(b[i])];
 			tree.merge(a[i], b[i]);
 			cnt[tree.leader(a[i])] = sum;
+            
 		} else {
 			r[i-1] = r[i];
 		}
