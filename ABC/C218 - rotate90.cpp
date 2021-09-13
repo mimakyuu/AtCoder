@@ -96,10 +96,10 @@ ll modncr(ll n, ll r, ll mod) {
     return (a % mod) * (b % mod) % mod;
 }
 
+//Rotate90
 vvc rotate90(vvc a) { 
 	ll n = a.size();
     vvc b(n, vc(n));
-	
 	
 	rep(i, n) {
 		rep(j, n) {
@@ -112,10 +112,9 @@ vvc rotate90(vvc a) {
 		}	
 	}
     
-	
-	
     return a;
 }
+//Rotate90 (O(n^2)) END
 
 signed main() {
 	ll n;
