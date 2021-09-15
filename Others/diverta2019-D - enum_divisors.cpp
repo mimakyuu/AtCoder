@@ -96,6 +96,7 @@ ll modncr(ll n, ll r, ll mod) {
     return (a % mod) * (b % mod) % mod;
 }
 
+//enum_divisors
 vll enum_divisors(ll N) {
     vll res;
     for (ll i = 1; i * i <= N; ++i) {
@@ -107,6 +108,7 @@ vll enum_divisors(ll N) {
     sort(res.begin(), res.end());
     return res;
 }
+// enum_divisors (O(sqrt(n))) End
 
 
 signed main() {
