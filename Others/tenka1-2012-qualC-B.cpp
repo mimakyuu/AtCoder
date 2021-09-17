@@ -101,7 +101,7 @@ signed main() {
 	string s;
 	cin >> s;
 	s.pb('!');
-	vs si;
+	vs card;
 	ll cur = 0;
 	string tmp;
 	map <char, ll> mp;
@@ -120,7 +120,7 @@ signed main() {
 				
 			}
 			cur = i+1;
-			si.pb(tmp);
+			card.pb(tmp);
 			
 			if (tmp[1] == 'T' || tmp[1] == 'J' || tmp[1] == 'Q' || tmp[1] == 'K' || tmp[1] == 'A') mp[tmp[0]]++;
 			if (mp[tmp[0]] == 5) {
@@ -133,19 +133,19 @@ signed main() {
 
 	ll cnt = 0;
 	bool flg = false;
-	rep(i, si.size()) {
-		if (si[i][0] != r) {
+	rep(i, card.size()) {
+		if (card[i][0] != r) {
 			flg = true;
-			if (si[i][1] == 'T') {
-				cout << si[i][0] << "10";
+			if (card[i][1] == 'T') {
+				cout << card[i][0] << "10";
 				continue;
 			}
-			cout << si[i];
+			cout << card[i];
 			continue;
 		}
         
-		if (si[i][1] >= '0' && si[i][1] <= '9') {
-			cout << si[i];
+		if (card[i][1] >= '0' && card[i][1] <= '9') {
+			cout << card[i];
 			flg = true;
 			continue;
 		}
