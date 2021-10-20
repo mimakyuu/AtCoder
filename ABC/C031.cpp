@@ -75,19 +75,19 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll fact_mod(ll n, ll mod) {
+ll fact_mod(ll n, ll mod = 9e18) {
     ll f = 1; for (ll i = 2; i <= n; i++) f = f * (i % mod) % mod;
     return f;
 }
 
-ll modpow(ll x, ll n, ll mod) {
+ll modpow(ll x, ll n, ll mod = 9e18) {
     if(n == 0) return 1;
     ll res = modpow((x * x) % mod, n / 2 , mod);
     if(n & 1) res = (res * x) % mod;
     return res;
 }
 
-ll modncr(ll n, ll r, ll mod) {
+ll modncr(ll n, ll r, ll mod = 9e18) {
     if(r > n-r) r = n-r;
     if(r == 0) return 1;
     ll a = 1;
@@ -187,19 +187,19 @@ const ll LLINF = 1LL << 60;
 const ll MOD = 1000000007;
 const double EPS = 1e-9;
 
-ll fact_mod(ll n, ll mod) {
+ll fact_mod(ll n, ll mod = 9e18) {
     ll f = 1; for (ll i = 2; i <= n; i++) f = f * (i % mod) % mod;
     return f;
 }
 
-ll modpow(ll x, ll n, ll mod) {
+ll modpow(ll x, ll n, ll mod = 9e18) {
     if(n == 0) return 1;
     ll res = modpow((x * x) % mod, n / 2 , mod);
     if(n & 1) res = (res * x) % mod;
     return res;
 }
 
-ll modncr(ll n, ll r, ll mod) {
+ll modncr(ll n, ll r, ll mod = 9e18) {
     if(r > n-r) r = n-r;
     if(r == 0) return 1;
     ll a = 1;
