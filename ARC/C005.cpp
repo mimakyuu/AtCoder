@@ -161,7 +161,6 @@ signed main() {
 	}
 	ll st = -1, gl = -1;
 	rep(i, h) {
-		cin >> field[i];
 		rep(j, w) {
 			if (field[i][j] == 's') st = i*w+j;
 			if (field[i][j] == 'g') gl = i*w+j;
