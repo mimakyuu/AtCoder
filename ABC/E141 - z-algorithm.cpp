@@ -96,6 +96,7 @@ ll modncr(ll n, ll r, ll mod = 9e18) {
     return (a % mod) * (b % mod) % mod;
 }
 
+//z-algorithm
 vll z_algorithm(string s) {
 	vll z(s.size());
 	z[0] = s.size();
@@ -120,6 +121,7 @@ vll z_algorithm(string s) {
 	}
 	return z;
 }
+//z-algorithm (O(|S|)) End
 
 signed main() {
 	ll n;
