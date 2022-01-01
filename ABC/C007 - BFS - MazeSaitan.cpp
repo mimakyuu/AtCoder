@@ -102,6 +102,37 @@ ll modncr(ll N, ll K) {
     return (res*modpow(p,MOD-2))%MOD;
 }
 
+vvll bfs(vs field, ll sy = 0, ll sx = 0) {
+	ll h = field.size();
+	ll w = field[0].size();
+	vvll dist(h, vll(w, -1)); 
+	dist[sy][sx] = 0;
+
+	queue<pll> que; 
+	que.push(make_pair(sy, sx));
+
+	while (!que.empty()) {
+		ll y = que.front().first;
+ 		ll x = que.front().second;
+        
+		que.pop();
+
+		rep(dir, 4) {
+			int ny = y + dy[dir];
+			int nx = x + dx[dir];
+            
+			if (ny < 0 || ny >= h || nx < 0 || nx >= w) continue;
+			if (field[ny][nx] == '#') continue;
+
+			if (dist[ny][nx] == -1) {
+				que.push(make_pair(ny, nx));
+				dist[ny][nx] = dist[y][x] + 1;
+			}
+		}
+	}
+	return dist;
+	
+}
 
 signed main() {
     ll h, w;
@@ -115,35 +146,8 @@ signed main() {
     rep(i, h) {
         cin >> field[i];
     }
-
-
-
-    vvll dist(h, vll(w, -1)); 
-    dist[sy][sx] = 0;
-
-    queue <pair<ll, ll>> que; 
-    que.push (make_pair(sy, sx));
-
-
-    while (!que.empty()) {
-        pair<ll, ll> current_pos = que.front();
-        ll x = current_pos.second;
-        ll y = current_pos.first;
-        que.pop();
-
-        for (int dir = 0; dir < 4; ++dir) {
-            int next_x = x + dx[dir];
-            int next_y = y + dy[dir];
-            if (next_y < 0 || next_y >= h || next_x < 0 || next_x >= w) continue;
-            if (field[next_y][next_x] == '#') continue;
-
-            if (dist[next_y][next_x] == -1) {
-                que.push(make_pair(next_y, next_x));
-                dist[next_y][next_x] = dist[y][x] + 1;
-            }
-        }
-    }
-
+	
+	vvll dist = bfs(field, sy, sx);
 
     mes(dist[gy][gx]);
 
